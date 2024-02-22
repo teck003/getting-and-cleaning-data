@@ -1,0 +1,33 @@
+# Code Book
+
+## Introduction
+
+The tidy data set, `tidy_data.txt`, contains averages of the mean and standard deviation measurements for each activity and each subject from the original Human Activity Recognition data.
+
+## Variables
+
+The tidy data set consists of the following variables:
+
+- `subject`: Identifier for the subject who performed the activity (ranges from 1 to 30).
+- `activity`: Descriptive name of the activity performed by the subject.
+- Other variables: The average of each variable for each activity and each subject.
+
+For a complete list of variables and their descriptions, refer to the [features_info.txt](./data/UCI%20HAR%20Dataset/features_info.txt) file in the original data.
+
+## Transformation
+
+The tidy data set is created by merging, cleaning, and summarizing the original data using the `run_analysis.R` script. The script performs the following steps:
+
+1. Downloads and unzips the raw data.
+2. Reads and merges the training and test datasets, labels, and subjects.
+3. Extracts only the mean and standard deviation measurements.
+4. Applies descriptive activity names.
+5. Labels the dataset with descriptive variable names.
+6. Creates a tidy data set with averages for each activity and each subject.
+
+## How to Read Tidy Data
+
+To read the tidy data back into R, you can use the following R code:
+
+```R
+tidy_data <- read.table("tidy_data.txt", header = TRUE)
